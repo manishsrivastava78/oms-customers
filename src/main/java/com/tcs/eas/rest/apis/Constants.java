@@ -9,7 +9,7 @@ public interface Constants {
 	
 	
 	/**
-	 * 
+	 * Body content type
 	 */
 	public static final String HEADER_CONTENT_TYPE = "content_type";
 	

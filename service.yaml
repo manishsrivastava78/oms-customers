@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: oms-customer-svc
+  namespace: app
+  labels:
+    app: oms-customer
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: oms-customer
+
