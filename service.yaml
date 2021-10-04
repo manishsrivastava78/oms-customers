@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: oms-customer-svc
-  namespace: app
+  namespace: customer-domain
   labels:
     app: oms-customer
 spec:
