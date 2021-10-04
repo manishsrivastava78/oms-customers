@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: oms-customer
-  namespace: customer-domain
+  namespace: app
   labels:
     app: oms-customer
 spec:
