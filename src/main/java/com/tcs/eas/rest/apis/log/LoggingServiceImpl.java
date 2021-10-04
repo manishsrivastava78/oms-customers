@@ -4,11 +4,9 @@ import static net.logstash.logback.argument.StructuredArguments.kv;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,11 +18,9 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tcs.eas.rest.apis.model.Test;
 import com.tcs.eas.rest.apis.utility.Utility;
 
 import lombok.extern.java.Log;
-import net.logstash.logback.argument.StructuredArgument;
 import net.logstash.logback.argument.StructuredArguments;
 
 @Component
@@ -134,6 +130,11 @@ public class LoggingServiceImpl extends MdcLogging implements LoggingService {
 		} catch (Exception e) {
 			return "{\"error\":\"payload generation issue\"}";
 		}
+	}
+	
+	@Override
+	public void logError(String errorMessage) {
+		LOGGER.error("Error: "+errorMessage,HTTP_STATUS_500);
 	}
 
 }

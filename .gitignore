@@ -9,3 +9,6 @@ test/reports/*
 .settings/*
 .classpath
 target/
+data
+data/
+data/*
