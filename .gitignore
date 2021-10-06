@@ -12,3 +12,5 @@ target/
 data
 data/
 data/*
+.settings/
+.settings/*.*
