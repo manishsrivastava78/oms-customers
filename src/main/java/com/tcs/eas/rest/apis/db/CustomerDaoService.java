@@ -54,18 +54,4 @@ public class CustomerDaoService {
 			return null;
 		}
 	}
-	
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 */
-	public Customer getCustomerById1(Integer id) {
-		Optional<Customer> optional = customerRepository.findById(id);
-		if(optional.isPresent())
-			return  optional.get();
-		else {
-			return null;
-		}
-	}
 }
