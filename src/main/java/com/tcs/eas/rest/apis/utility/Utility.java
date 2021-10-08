@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpHeaders;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tcs.eas.rest.apis.Constants;
@@ -80,4 +81,20 @@ public class Utility  implements Constants{
 		return responseHeaders;
 	}
 	
+	/**
+	 * 
+	 * @param object
+	 * @return
+	 */
+	public static String getJsonString(Object object) {
+		ObjectMapper mapper = new ObjectMapper();
+    	String json = "";
+    	try {
+    	  json = mapper.writeValueAsString(object);
+    	  //System.out.println(json);
+    	} catch (JsonProcessingException e) {
+    	   e.printStackTrace();
+    	}
+    	return json;
+    }
 }
